@@ -125,6 +125,7 @@
                 <!--</configuration>-->
             <!--</plugin>-->
 
+            <!--This plugin is instead of all commented part in build tags-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
