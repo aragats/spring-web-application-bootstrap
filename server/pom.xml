@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--<parent>-->
+        <!--<artifactId>parent</artifactId>-->
+        <!--<groupId>ru.aragats.sdm</groupId>-->
+        <!--<version>0.0.1-SNAPSHOT</version>-->
+    <!--</parent>-->
+
+    <!--<parent>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+        <!--<version>1.1.7.RELEASE</version>-->
+    <!--</parent>-->
+
+    <!--<artifactId>server</artifactId>-->
+    <!--<packaging>war</packaging>-->
+
+    <!--<groupId>org.springframework</groupId>-->
+    <artifactId>server</artifactId>
+    <version>0.1.0</version>
+    <packaging>war</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.1.RELEASE</version>
+    </parent>
+
+
+
+    <properties>
+        <start-class>ru.aragats.sdm.server.Application</start-class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <!--<javaVersion>1.8</javaVersion>-->
+        <!--<mavenWarPluginVersion>2.4</mavenWarPluginVersion>-->
+        <!--<mavenCompilerPluginVersion>3.1</mavenCompilerPluginVersion>-->
+
+
+        <springVersion>1.1.8.RELEASE</springVersion>
+        <mongoJavaDriverVersion>2.12.5</mongoJavaDriverVersion>
+        <morphiaVersion>0.109</morphiaVersion>
+        <gsonVersion>2.3.1</gsonVersion>
+        <jsonVersion>20140107</jsonVersion>
+        <twitterHbcCoreVersion>2.2.0</twitterHbcCoreVersion>
+        <commonsLang3Version>3.3.2</commonsLang3Version>
+        <jInstagramVersion>1.0.10</jInstagramVersion>
+        <log4jVersion>1.2.17</log4jVersion>
+        <sringMongoDB>1.6.2.RELEASE</sringMongoDB>
+        <junitVersion>4.11</junitVersion>
+    </properties>
+
+
+    <dependencies>
+        <!--Spring-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!--<version>${springVersion}</version>-->
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+            <!--<version>${springVersion}</version>-->
+            <!--&lt;!&ndash;TODO make it provided when build war for Tomcat&ndash;&gt;-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>${sringMongoDB}</version>
+        </dependency>
+
+        <!--Log4J-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4jVersion}</version>
+        </dependency>
+
+
+
+        <!--Components-->
+        <dependency>
+            <groupId>ru.aragats.sdm</groupId>
+            <artifactId>business</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+
+    <build>
+        <!--<finalName>${project.artifactId}</finalName>-->
+        <!--<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>-->
+
+        <plugins>
+            <!--<plugin>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<version>${mavenCompilerPluginVersion}</version>-->
+                <!--<configuration>-->
+                    <!--<source>${javaVersion}</source>-->
+                    <!--<target>${javaVersion}</target>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-war-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<mainClass>${start-class}</mainClass>-->
+                            <!--<addDefaultImplementationEntries>true</addDefaultImplementationEntries>-->
+                        <!--</manifest>-->
+                    <!--</archive>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-war-plugin</artifactId>-->
+                <!--<version>${mavenWarPluginVersion}</version>-->
+                <!--<configuration>-->
+                    <!--<webXml>src/main/webapp/WEB-INF/web.xml</webXml>-->
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<addDefaultImplementationEntries>true</addDefaultImplementationEntries>-->
+                        <!--</manifest>-->
+                    <!--</archive>-->
+                    <!--<packagingExcludes>WEB-INF/classes</packagingExcludes>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+
+</project>

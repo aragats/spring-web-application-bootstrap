@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>parent</artifactId>
+        <groupId>ru.aragats.sdm</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>business</artifactId>
+
+
+    <dependencies>
+
+
+        <!--MongoDB-->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${mongoJavaDriverVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mongodb.morphia</groupId>
+            <artifactId>morphia</artifactId>
+            <version>${morphiaVersion}</version>
+        </dependency>
+
+
+
+        <!--Apache-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commonsLang3Version}</version>
+        </dependency>
+
+
+        <!--Spring-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.springframework</groupId>-->
+        <!--<artifactId>spring-context</artifactId>-->
+        <!--<version>4.1.4.RELEASE</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>${sringMongoDB}</version>
+        </dependency>
+
+        <!--Log4J-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4jVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junitVersion}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--Components-->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>persistence</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
+        <!--Test-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${springTestVersion}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${mavenCompilerPluginVersion}</version>
+                <configuration>
+                    <source>${javaVersion}</source>
+                    <target>${javaVersion}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

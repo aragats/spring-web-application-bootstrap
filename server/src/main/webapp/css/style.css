@@ -1,0 +1,114 @@
+/*Example of css file for index page*/
+#map {
+    /*width: 800px;*/
+    /*height: 600px;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*border: 1px solid #ccc;*/
+    /*position: absolute;*/
+}
+
+#map {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#map {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+#map:active {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+
+#map {
+    position: absolute;
+    top: 51px;
+    left: 245px;
+    right: 0;
+    bottom: 0px;
+    z-index: 1;
+    border: 1px solid #A7A6A4;
+}
+
+#progress {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 400px;
+    top: 300px;
+    width: 200px;
+    height: 20px;
+    margin-top: -20px;
+    margin-left: -100px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+#progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #76A6FC;
+    border-radius: 4px;
+}
+
+.clear {
+    height: 10px;
+}
+
+#count {
+    position: absolute;
+    top: 86px;
+    left: 288px;
+    width: auto;
+    height: auto;
+    line-height: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+    /*padding-left: 5px;*/
+    border-radius: 7px;
+    color: #222;
+    padding: 3px 10px;
+    font-family: 'TitilliumTextRegular', cursive;
+}
+
+.twitter_divider {
+    /*margin-top: 0;*/
+    /*margin-bottom: 0;*/
+    /*border: 0;*/
+    /*border-top: 1px solid #eee;*/
+
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 22px 0 21px;
+    height: 0;
+}
+
+
+#hashtags .exemple {
+    position: relative;
+    display: inline-block;
+    /*font-family: 'TitilliumTextRegular', cursive;*/
+    /*font-size: 12px;*/
+    color: #ccc;
+    /*color: #999999;*/
+    /*float left. Break all*/
+    /*float: left;*/
+    /*margin-top: 8px;*/
+    /*margin-bottom: 8px;*/
+}
+
+.popup_twitter_window {
+    max-width: 250px;
+    max-height: 150px;
+    overflow: auto;
+}
